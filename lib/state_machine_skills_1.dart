@@ -26,8 +26,7 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
     // download this. The RiveFile just expects a list of bytes.
     // skills.riv
     // skills_square.riv
-    // icon_states.riv
-    rootBundle.load('assets/icon_states (3).riv').then(
+    rootBundle.load('assets/skills_square.riv').then(
       (data) async {
         // Load the RiveFile from the binary data.
         final file = RiveFile.import(data);
@@ -36,12 +35,12 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
         // Rive widget.
         final artboard = file.mainArtboard;
         var controller =
-            StateMachineController.fromArtboard(artboard, 'sm_confidences');
+            StateMachineController.fromArtboard(artboard, 'skill-controller');
         if (controller != null) {
           artboard.addController(controller);
           _levelInput = controller.findInput('level');
           print(
-              "pkp:  ~ file: state_machine_skills.dart:43 ~ voidinitState ~ _levelInput");
+              "pkp:  ~ file: state_machine_skills.dart:42 ~ _StateMachineSkillsState ~ voidinitState ~ _levelInput");
         }
         setState(() => _riveArtboard = artboard);
       },
@@ -52,7 +51,7 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Confidence Ring'),
+        title: const Text('Skills Machine'),
       ),
       body: Center(
         child: _riveArtboard == null

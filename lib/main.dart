@@ -28,7 +28,7 @@ class RiveExampleApp extends StatefulWidget {
 class _RiveExampleAppState extends State<RiveExampleApp> {
   // Example animations
   final _pages = [
-    const _Page('Skills Machine', StateMachineSkills()),
+    const _Page('Confidence Ring', StateMachineSkills()),
     const _Page('Simple Animation', MySimpleAssetAnimation()),
   ];
 
