@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:rivetest/state_machine_skills.dart';
 
+import 'my_simple_animation.dart';
+
 void main() => runApp(
       MaterialApp(
         title: 'Rive Example',
@@ -27,6 +29,7 @@ class _RiveExampleAppState extends State<RiveExampleApp> {
   // Example animations
   final _pages = [
     const _Page('Skills Machine', StateMachineSkills()),
+    const _Page('Simple Animation', MySimpleAssetAnimation()),
   ];
 
   @override
