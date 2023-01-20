@@ -16,6 +16,7 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
 
   Artboard? _riveArtboard;
   StateMachineController? _controller;
+  // step 1
   SMIInput<double>? _levelInput;
 
   @override
@@ -28,6 +29,7 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
     // skills_square.riv
     // icon_states.riv
     // icon_assignment.riv
+    // step 2
     rootBundle.load('assets/icon_assignment.riv').then(
       (data) async {
         // Load the RiveFile from the binary data.
@@ -36,11 +38,13 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
         // The artboard is the root of the animation and gets drawn in the
         // Rive widget.
         final artboard = file.mainArtboard;
+        // step 3
         var controller =
             // StateMachineController.fromArtboard(artboard, 'sm_confidences');
             StateMachineController.fromArtboard(artboard, 'icon assignment');
         if (controller != null) {
           artboard.addController(controller);
+          // step 4
           _levelInput = controller.findInput('level');
           print(
               "pkp:  ~ file: state_machine_skills.dart:43 ~ voidinitState ~ _levelInput");
@@ -75,6 +79,7 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
                       children: [
                         ElevatedButton(
                           child: const Text('Beginner'),
+                          // step 5
                           onPressed: () => _levelInput?.value = 0,
                         ),
                         const SizedBox(width: 10),
