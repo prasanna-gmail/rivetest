@@ -27,7 +27,8 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
     // skills.riv
     // skills_square.riv
     // icon_states.riv
-    rootBundle.load('assets/icon_states (3).riv').then(
+    // icon_assignment.riv
+    rootBundle.load('assets/icon_assignment.riv').then(
       (data) async {
         // Load the RiveFile from the binary data.
         final file = RiveFile.import(data);
@@ -36,7 +37,8 @@ class _StateMachineSkillsState extends State<StateMachineSkills> {
         // Rive widget.
         final artboard = file.mainArtboard;
         var controller =
-            StateMachineController.fromArtboard(artboard, 'sm_confidences');
+            // StateMachineController.fromArtboard(artboard, 'sm_confidences');
+            StateMachineController.fromArtboard(artboard, 'icon assignment');
         if (controller != null) {
           artboard.addController(controller);
           _levelInput = controller.findInput('level');
